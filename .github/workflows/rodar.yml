@@ -1,4 +1,4 @@
-ame: Rodar automático
+name: Rodar automático
 
 on:
   schedule:
