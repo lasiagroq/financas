@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#b32927" />
+    <title>Delícias da JU | Comida de verdade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Delícias da JU, início">
+        <span class="brand-mark">JU</span>
+        <span>delícias da <strong>JU</strong></span>
+      </a>
+      <div class="delivery-address">
+        <span class="pin" aria-hidden="true">⌖</span>
+        <span><small>Entregar em</small><b>Vila Mariana, São Paulo</b></span>
+        <button aria-label="Alterar endereço">⌄</button>
+      </div>
+      <button class="cart-button" id="cartButton" aria-label="Ver sacola">
+        <span>Minha sacola</span><b id="cartCount">0</b>
+      </button>
+    </header>
+
+    <main id="inicio">
+      <section class="welcome" aria-labelledby="welcome-title">
+        <div>
+          <p class="eyebrow">MARMITAS &amp; COMIDA CASEIRA</p>
+          <h1 id="welcome-title">Almoço feito<br />com calma.</h1>
+          <p class="intro">Todo dia tem comida fresquinha saindo da nossa cozinha. Escolha sua marmita e a gente cuida do resto.</p>
+          <div class="notice"><span></span>Pedidos de hoje até 13h30</div>
+        </div>
+        <figure class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1050&q=85" alt="Marmita caseira servida em uma tigela" />
+          <figcaption><span>✦</span> Cozinha da Ju, desde 2018</figcaption>
+        </figure>
+      </section>
+
+      <section class="menu-section" aria-labelledby="menu-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">CARDÁPIO DE HOJE</p><h2 id="menu-title">O que vai na sua mesa?</h2></div>
+          <a href="#como-funciona">Ver cardápio completo <span>→</span></a>
+        </div>
+        <div class="filters" role="list" aria-label="Filtrar cardápio">
+          <button class="filter active" data-filter="todos">Tudo</button>
+          <button class="filter" data-filter="marmita">Marmitas</button>
+          <button class="filter" data-filter="vegetariano">Sem carne</button>
+          <button class="filter" data-filter="sobremesa">Pra depois</button>
+        </div>
+        <div class="food-grid">
+          <article class="dish" data-category="marmita">
+            <div class="dish-image"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=85" alt="Prato com frango grelhado, arroz e legumes" /><span class="tag">Mais pedido</span></div>
+            <div class="dish-copy"><div><h3>Frango grelhado da Ju</h3><p>Arroz, feijão, legumes na manteiga e farofinha.</p></div><div class="dish-bottom"><strong>R$ 26,00</strong><button class="add" data-name="Frango grelhado da Ju" data-price="26">Adicionar <span>+</span></button></div></div>
+          </article>
+          <article class="dish" data-category="marmita">
+            <div class="dish-image"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=85" alt="Prato de carne com acompanhamentos caseiros" /></div>
+            <div class="dish-copy"><div><h3>Carne de panela</h3><p>Molhinho da casa, purê de batata, arroz e feijão.</p></div><div class="dish-bottom"><strong>R$ 28,00</strong><button class="add" data-name="Carne de panela" data-price="28">Adicionar <span>+</span></button></div></div>
+          </article>
+          <article class="dish" data-category="vegetariano">
+            <div class="dish-image"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=85" alt="Prato colorido de legumes frescos" /><span class="tag green">Vegetariana</span></div>
+            <div class="dish-copy"><div><h3>Abóbora assada &amp; grão-de-bico</h3><p>Com arroz integral, feijão e vinagrete de couve.</p></div><div class="dish-bottom"><strong>R$ 25,00</strong><button class="add" data-name="Abóbora assada e grão-de-bico" data-price="25">Adicionar <span>+</span></button></div></div>
+          </article>
+          <article class="dish" data-category="sobremesa">
+            <div class="dish-image"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=85" alt="Bolo de chocolate fatiado" /></div>
+            <div class="dish-copy"><div><h3>Bolo da vó com calda</h3><p>Fatia generosa de bolo de chocolate feito pela manhã.</p></div><div class="dish-bottom"><strong>R$ 9,00</strong><button class="add" data-name="Bolo da vó com calda" data-price="9">Adicionar <span>+</span></button></div></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="about" id="como-funciona" aria-labelledby="about-title">
+        <div class="about-stamp" aria-hidden="true"><span>feito<br />em casa</span><i>♥</i></div>
+        <div class="about-copy"><p class="eyebrow">POR TRÁS DA PANELA</p><h2 id="about-title">Aqui tem a receita da família.</h2><p>A Delícias da JU nasceu na nossa cozinha, com as receitas que reuniam todo mundo à mesa no domingo. Hoje, a gente faz sua marmita com o mesmo cuidado — e com aquele cheirinho bom de comida pronta.</p><p class="signature">Com carinho, Ju e família.</p></div>
+        <div class="steps"><div><b>01</b><span>Você escolhe<br />o prato</span></div><div><b>02</b><span>A gente prepara<br />com frescor</span></div><div><b>03</b><span>Chega quentinha<br />na sua porta</span></div></div>
+      </section>
+    </main>
+
+    <aside class="cart-panel" id="cartPanel" aria-label="Minha sacola" aria-hidden="true">
+      <div class="cart-head"><div><p class="eyebrow">SEU PEDIDO</p><h2>Minha sacola</h2></div><button class="close" id="closeCart" aria-label="Fechar sacola">×</button></div>
+      <div class="cart-items" id="cartItems"><p class="empty">Sua sacola está vazia.<br />Que tal escolher uma marmita?</p></div>
+      <div class="cart-footer"><div><span>Subtotal</span><strong id="cartTotal">R$ 0,00</strong></div><button id="checkout" disabled>Continuar pedido <span>→</span></button></div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+    <div class="toast" id="toast" role="status">Adicionado à sua sacola.</div>
+    <script src="script.js"></script>
+  </body>
+</html>

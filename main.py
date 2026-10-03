@@ -1,22 +1,21 @@
-from datetime import datetime
+"""Servidor local da vitrine da Delícias da JU.
 
-contas = [
-    {"nome": "Aluguel", "vencimento": "2026-03-25"},
-    {"nome": "Internet", "vencimento": "2026-03-22"},
-    {"nome": "Luz", "vencimento": "2026-03-20"},
-]
+Execute `python main.py` e abra http://localhost:8000 no navegador.
+"""
 
-hoje = datetime.today()
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
-print("📊 Verificando contas...\n")
 
-for conta in contas:
-    data_venc = datetime.strptime(conta["vencimento"], "%Y-%m-%d")
-    dias = (data_venc - hoje).days
+def create_server(host: str = "", port: int = 8000) -> ThreadingHTTPServer:
+    """Create the local static-file server without starting its event loop."""
+    return ThreadingHTTPServer((host, port), SimpleHTTPRequestHandler)
 
-    if dias < 0:
-        print(f"❌ {conta['nome']} está VENCIDA!")
-    elif dias <= 2:
-        print(f"⚠️ {conta['nome']} vence em {dias} dias!")
-    else:
-        print(f"✅ {conta['nome']} está ok")
+
+if __name__ == "__main__":
+    server = create_server()
+    print("Delícias da JU em http://localhost:8000")
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nAté logo!")
+        server.server_close()
